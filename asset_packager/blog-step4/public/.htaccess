@@ -1,0 +1,8 @@
+<IfModule mod_deflate.c>
+	AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript
+</IfModule>
+
+ExpiresActive On
+<FilesMatch "\.(ico|jpg|jpeg|png|gif|js|css)">
+	ExpiresDefault "access plus 1 month"
+</FilesMatch>

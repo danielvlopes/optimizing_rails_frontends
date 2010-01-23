@@ -1,0 +1,10 @@
+embed_images: on
+
+javascripts:
+  base:
+    - public/javascripts/**
+
+stylesheets:
+  base: 
+    - public/stylesheets/application.css
+    - public/stylesheets/scaffold.css

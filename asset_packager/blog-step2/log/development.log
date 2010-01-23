@@ -1,0 +1,427 @@
+# Logfile created on Sun Sep 06 18:19:10 -0300 2009
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:19:21) [GET]
+  [4;36;1mPost Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: posts: SELECT * FROM "posts" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: posts: SELECT * FROM "posts" ):
+  app/controllers/posts_controller.rb:7:in `index'
+
+Rendered rescues/_trace (94.7ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosts (20081119173453)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081119173453')[0m
+Migrating to CreateComments (20081119195525)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer, "body" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20081119195525')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:20:50) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 260ms (View: 248, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-06 18:21:08) [GET]
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (View: 1, DB: 0) | 401 Unauthorized [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-06 18:21:25) [GET]
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (View: 1, DB: 0) | 401 Unauthorized [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-06 18:21:28) [GET]
+Rendering template within layouts/posts
+Rendering posts/new
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:21:31) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:26:51) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/posts
+Rendering posts/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:27:20) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+
+ActionView::TemplateError (undefined local variable or method `flash_notices' for #<ActionView::Base:0x16fce20>) on line #21 of app/views/layouts/application.html.erb:
+18: 	<div id="page">
+19: 		<div id="page-bgtop">
+20: 			<div id="content">
+21: 				<%= flash_notices %>
+22: 				<%= yield %>
+23: 			</div>
+24: 			<!-- end #content -->
+
+    app/views/layouts/application.html.erb:21
+    app/controllers/posts_controller.rb:9:in `index'
+
+Rendered rescues/_trace (42.0ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:28:04) [GET]
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-06 18:28:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/styles.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:28:25) [GET]
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-06 18:28:28) [GET]
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (View: 1, DB: 0) | 401 Unauthorized [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-06 18:28:28) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Completed in 111ms (View: 105, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-06 18:29:16) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"dji8e1RYGfBBe9xGfErgZxsa+NEftxqs/T0tWaisLBY=", "post"=>{"body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim aliquet eros, nec porttitor dui laoreet eu. \r\n\r\nMauris rutrum, diam eu tincidunt eleifend, neque dolor aliquam odio, sed euismod nisi sapien a nulla. Praesent facilisis nibh sed nibh luctus non iaculis tortor ultricies. Nam sed orci et quam placerat convallis id id felis. Maecenas pulvinar, nibh id posuere auctor, massa sapien aliquet nulla, eu venenatis leo nibh eget mauris. Donec tempus commodo eleifend. \r\n\r\nEtiam semper dui quis metus volutpat a commodo enim varius. Suspendisse sit amet sapien a erat ultrices sollicitudin. Proin viverra turpis id sem placerat molestie. Duis non est sapien, elementum sodales ligula. Donec nec mi enim, commodo placerat dui. In sem risus, laoreet sit amet sollicitudin eu, consectetur a ipsum. Cras fringilla scelerisque mattis. Donec feugiat imperdiet cursus. Morbi convallis auctor quam, ut vehicula nunc imperdiet sit amet.", "title"=>"Lorem ipsum dolor sit amet"}}
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (View: 1, DB: 0) | 401 Unauthorized [http://localhost/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-06 18:29:16) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"dji8e1RYGfBBe9xGfErgZxsa+NEftxqs/T0tWaisLBY=", "post"=>{"body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim aliquet eros, nec porttitor dui laoreet eu. \r\n\r\nMauris rutrum, diam eu tincidunt eleifend, neque dolor aliquam odio, sed euismod nisi sapien a nulla. Praesent facilisis nibh sed nibh luctus non iaculis tortor ultricies. Nam sed orci et quam placerat convallis id id felis. Maecenas pulvinar, nibh id posuere auctor, massa sapien aliquet nulla, eu venenatis leo nibh eget mauris. Donec tempus commodo eleifend. \r\n\r\nEtiam semper dui quis metus volutpat a commodo enim varius. Suspendisse sit amet sapien a erat ultrices sollicitudin. Proin viverra turpis id sem placerat molestie. Duis non est sapien, elementum sodales ligula. Donec nec mi enim, commodo placerat dui. In sem risus, laoreet sit amet sollicitudin eu, consectetur a ipsum. Cras fringilla scelerisque mattis. Donec feugiat imperdiet cursus. Morbi convallis auctor quam, ut vehicula nunc imperdiet sit amet.", "title"=>"Lorem ipsum dolor sit amet"}}
+  [4;35;1mPost Create (0.5ms)[0m   [0mINSERT INTO "posts" ("updated_at", "title", "body", "created_at") VALUES('2009-09-06 21:29:16', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim aliquet eros, nec porttitor dui laoreet eu. 
+
+Mauris rutrum, diam eu tincidunt eleifend, neque dolor aliquam odio, sed euismod nisi sapien a nulla. Praesent facilisis nibh sed nibh luctus non iaculis tortor ultricies. Nam sed orci et quam placerat convallis id id felis. Maecenas pulvinar, nibh id posuere auctor, massa sapien aliquet nulla, eu venenatis leo nibh eget mauris. Donec tempus commodo eleifend. 
+
+Etiam semper dui quis metus volutpat a commodo enim varius. Suspendisse sit amet sapien a erat ultrices sollicitudin. Proin viverra turpis id sem placerat molestie. Duis non est sapien, elementum sodales ligula. Donec nec mi enim, commodo placerat dui. In sem risus, laoreet sit amet sollicitudin eu, consectetur a ipsum. Cras fringilla scelerisque mattis. Donec feugiat imperdiet cursus. Morbi convallis auctor quam, ut vehicula nunc imperdiet sit amet.', '2009-09-06 21:29:16')[0m
+Redirected to http://localhost:3000/posts/1
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-09-06 18:29:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_post (2.5ms)
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Completed in 48ms (View: 41, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-09-06 18:29:34) [POST]
+  Parameters: {"commit"=>"Add Comment", "post_id"=>"1", "authenticity_token"=>"dji8e1RYGfBBe9xGfErgZxsa+NEftxqs/T0tWaisLBY=", "comment"=>{"body"=>"Ohow, a really great post."}, "_"=>""}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Create (0.4ms)[0m   [0mINSERT INTO "comments" ("updated_at", "body", "post_id", "created_at") VALUES('2009-09-06 21:29:34', 'Ohow, a really great post.', 1, '2009-09-06 21:29:34')[0m
+Rendering comments/create
+Rendered comments/_comment (141.2ms)
+Completed in 166ms (View: 152, DB: 1) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-09-06 18:29:43) [POST]
+  Parameters: {"commit"=>"Add Comment", "post_id"=>"1", "authenticity_token"=>"dji8e1RYGfBBe9xGfErgZxsa+NEftxqs/T0tWaisLBY=", "comment"=>{"body"=>"I love your blog."}, "_"=>""}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;35;1mComment Create (0.3ms)[0m   [0mINSERT INTO "comments" ("updated_at", "body", "post_id", "created_at") VALUES('2009-09-06 21:29:43', 'I love your blog.', 1, '2009-09-06 21:29:43')[0m
+Rendering comments/create
+Rendered comments/_comment (2.2ms)
+Completed in 17ms (View: 4, DB: 1) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:29:48) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (2.9ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing CommentsController#index (for 127.0.0.1 at 2009-09-06 18:29:55) [GET]
+Rendering template within layouts/application
+Rendering comments/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #9 of app/views/comments/index.html.erb:
+6:     <th>Body</th>
+7:   </tr>
+8: 
+9: <% for comment in @comments %>
+10:   <tr>
+11:     <td><%=h comment.post_id %></td>
+12:     <td><%=h comment.body %></td>
+
+    app/views/comments/index.html.erb:9
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:30:05) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (2.8ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-09-06 18:30:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_post (1.6ms)
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendered comments/_comment (2.6ms)
+Rendered comments/_comment (0.4ms)
+Completed in 25ms (View: 19, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:30:11) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (2.6ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:31:38) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (68.7ms)
+Completed in 99ms (View: 88, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:39:52) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (67.1ms)
+Completed in 97ms (View: 86, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:40:35) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (67.8ms)
+Completed in 99ms (View: 88, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-07 18:07:01) [GET]
+  [4;36;1mPost Load (0.9ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (74.6ms)
+Completed in 248ms (View: 233, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-07 18:07:06) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (6.4ms)
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-07 18:08:06) [GET]
+  [4;36;1mPost Load (0.6ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (69.2ms)
+Completed in 107ms (View: 97, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-07 18:08:09) [GET]
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (5.1ms)
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-07 18:08:22) [GET]
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (2.5ms)
+Completed in 124ms (View: 120, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-07 18:08:26) [GET]
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (3.7ms)
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-23 14:56:08) [GET]
+  [4;36;1mPost Load (0.8ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (11.7ms)
+Completed in 38ms (View: 28, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-23 16:06:13) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (12.2ms)
+Completed in 73ms (View: 62, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-23 16:06:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_post (2.0ms)
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendered comments/_comment (89.1ms)
+Rendered comments/_comment (0.5ms)
+Completed in 140ms (View: 134, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2010-01-23 16:06:33) [POST]
+  Parameters: {"comment"=>{"body"=>"Olá blog em Rails"}, "commit"=>"Add Comment", "post_id"=>"1", "authenticity_token"=>"wTK48U76EWs2VBswBannisqACMwqEXTJ3hzl3f97sJk=", "_"=>""}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+  [4;36;1mComment Create (0.4ms)[0m   [0;1mINSERT INTO "comments" ("created_at", "body", "updated_at", "post_id") VALUES('2010-01-23 18:06:33', 'Olá blog em Rails', '2010-01-23 18:06:33', 1)[0m
+Rendering comments/create
+Rendered comments/_comment (2.9ms)
+Completed in 21ms (View: 8, DB: 1) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-23 16:12:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_post (2.3ms)
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendered comments/_comment (2.3ms)
+Rendered comments/_comment (0.4ms)
+Rendered comments/_comment (0.4ms)
+Completed in 91ms (View: 85, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-23 16:18:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_post (12.0ms)
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendered comments/_comment (24.3ms)
+Rendered comments/_comment (0.5ms)
+Rendered comments/_comment (0.4ms)
+Completed in 161ms (View: 149, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-23 16:18:13) [GET]
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (2.9ms)
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-23 16:34:52) [GET]
+  [4;35;1mPost Load (0.7ms)[0m   [0mSELECT * FROM "posts" [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_post (23.3ms)
+Completed in 52ms (View: 34, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-23 16:51:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_post (16.3ms)
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendered comments/_comment (96.8ms)
+Rendered comments/_comment (3.0ms)
+Rendered comments/_comment (0.5ms)
+
+ActionView::TemplateError (undefined method `stylesheet_link_merged' for #<ActionView::Base:0x1034ba768>) on line #9 of app/views/layouts/application.html.erb:
+6: <title>Posts: <%= controller.action_name %></title>
+7: <%= auto_discovery_link_tag :atom, posts_path(:format => :atom) %>
+8: 
+9: <%= stylesheet_link_merged :base %>
+10: <%= javascript_include_merged :base %>
+11: 
+12: </head>
+
+    app/views/layouts/application.html.erb:9
+    app/controllers/posts_controller.rb:22:in `show'
+
+Rendered rescues/_trace (136.4ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-23 16:52:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPost Load (6.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering posts/show
+Rendered posts/_post (30.4ms)
+  [4;35;1mComment Load (0.5ms)[0m   [0mSELECT * FROM "comments" WHERE ("comments".post_id = 1) [0m
+Rendered comments/_comment (72.0ms)
+Rendered comments/_comment (0.6ms)
+Rendered comments/_comment (0.4ms)
+Completed in 318ms (View: 288, DB: 7) | 200 OK [http://localhost/posts/1]

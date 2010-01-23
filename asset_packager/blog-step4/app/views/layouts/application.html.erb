@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Posts: <%= controller.action_name %></title>
+<%= auto_discovery_link_tag :atom, posts_path(:format => :atom) %>
+
+<%= stylesheet_link_merged :base %>
+<%= yield :stylesheets %>
+</head>
+<body>
+<div id="wrapper">
+  <div id="logo">
+    <h1>Blog</h1>
+    <p><em>ruby on rails</em></p>
+  </div>
+  <!-- end #logo -->
+  <div id="page">
+    <div id="page-bgtop">
+      <div id="content">
+        <%= flash_notices %>
+        <%= yield %>
+      </div>
+      <!-- end #content -->
+      <div style="clear: both;">&nbsp;</div>
+    </div>
+  </div>
+  <!-- end #page -->
+  <div id="footer">
+    <p>powered by <a href="http://www.rubyonrails.org/">Rails</a>.</p>
+  </div>
+  <!-- end #footer -->
+</div>
+<%= javascript_include_merged :base %>
+<%= yield :javascripts %>
+</body>
+</html>

@@ -1,0 +1,76 @@
+# Logfile created on Sun Sep 06 18:40:23 -0300 2009
+
+Processing PostsController#index (for 127.0.0.1 at 2009-09-06 18:40:59) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-06 18:41:01) [GET]
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 0ms (View: 0, DB: 0) | 401 Unauthorized [http://localhost/posts/new]
+
+
+Processing PostsController#new (for 127.0.0.1 at 2009-09-06 18:41:01) [GET]
+Rendering template within layouts/application
+Rendering posts/new
+Completed in 61ms (View: 60, DB: 0) | 200 OK [http://localhost/posts/new]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-06 18:41:13) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"dji8e1RYGfBBe9xGfErgZxsa+NEftxqs/T0tWaisLBY=", "post"=>{"body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim aliquet eros, nec porttitor dui laoreet eu.\r\n\r\nMauris rutrum, diam eu tincidunt eleifend, neque dolor aliquam odio, sed euismod nisi sapien a nulla. Praesent facilisis nibh sed nibh luctus non iaculis tortor ultricies. Nam sed orci et quam placerat convallis id id felis. Maecenas pulvinar, nibh id posuere auctor, massa sapien aliquet nulla, eu venenatis leo nibh eget mauris. Donec tempus commodo eleifend.\r\n\r\nEtiam semper dui quis metus volutpat a commodo enim varius. Suspendisse sit amet sapien a erat ultrices sollicitudin. Proin viverra turpis id sem placerat molestie. Duis non est sapien, elementum sodales ligula. Donec nec mi enim, commodo placerat dui. In sem risus, laoreet sit amet sollicitudin eu, consectetur a ipsum. Cras fringilla scelerisque mattis. Donec feugiat imperdiet cursus. Morbi convallis auctor quam, ut vehicula nunc imperdiet sit amet.", "title"=>"Lorem ipsum"}}
+Filter chain halted as [:authenticate] rendered_or_redirected.
+Completed in 1ms (View: 0, DB: 0) | 401 Unauthorized [http://localhost/posts]
+
+
+Processing PostsController#create (for 127.0.0.1 at 2009-09-06 18:41:13) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"dji8e1RYGfBBe9xGfErgZxsa+NEftxqs/T0tWaisLBY=", "post"=>{"body"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dignissim aliquet eros, nec porttitor dui laoreet eu.\r\n\r\nMauris rutrum, diam eu tincidunt eleifend, neque dolor aliquam odio, sed euismod nisi sapien a nulla. Praesent facilisis nibh sed nibh luctus non iaculis tortor ultricies. Nam sed orci et quam placerat convallis id id felis. Maecenas pulvinar, nibh id posuere auctor, massa sapien aliquet nulla, eu venenatis leo nibh eget mauris. Donec tempus commodo eleifend.\r\n\r\nEtiam semper dui quis metus volutpat a commodo enim varius. Suspendisse sit amet sapien a erat ultrices sollicitudin. Proin viverra turpis id sem placerat molestie. Duis non est sapien, elementum sodales ligula. Donec nec mi enim, commodo placerat dui. In sem risus, laoreet sit amet sollicitudin eu, consectetur a ipsum. Cras fringilla scelerisque mattis. Donec feugiat imperdiet cursus. Morbi convallis auctor quam, ut vehicula nunc imperdiet sit amet.", "title"=>"Lorem ipsum"}}
+Redirected to http://localhost:3000/posts/1
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/posts]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-09-06 18:41:13) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 14ms (View: 13, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-09-06 18:41:22) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-09-06 18:41:28) [POST]
+  Parameters: {"commit"=>"Add Comment", "post_id"=>"1", "authenticity_token"=>"dji8e1RYGfBBe9xGfErgZxsa+NEftxqs/T0tWaisLBY=", "comment"=>{"body"=>"Great post."}, "_"=>""}
+Rendering comments/create
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/posts/1/comments]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-09-06 18:44:27) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 12ms (View: 10, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2009-09-06 18:44:39) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 37ms (View: 33, DB: 0) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#show (for 127.0.0.1 at 2010-01-23 16:13:29) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/application
+Rendering posts/show
+Completed in 32ms (View: 28, DB: 1) | 200 OK [http://localhost/posts/1]
+
+
+Processing PostsController#index (for 127.0.0.1 at 2010-01-23 16:35:16) [GET]
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 69ms (View: 66, DB: 1) | 200 OK [http://localhost/]
